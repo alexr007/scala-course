@@ -48,9 +48,10 @@ object LearnEnumeratum {
       {
     override def values: IndexedSeq[Color] = findValues
 
-    case object Red extends Color
+    case object Red extends Color {
+      override def entryName: String = "rEd"
+    }
     case object Green extends Color
-    case class Blue(level: Int) extends Color
   }
 
 }
@@ -68,7 +69,7 @@ class LearnEnumeratumSpec extends AnyFunSpec with Matchers {
 
     val c1: Color = Color.Red
     val c2: Color = Color.Green
-    val s1        = "red"
+    val s1        = "rEd"
     val s2        = "green"
     val j1        = enquote(s1)
     val j2        = enquote(s2)
